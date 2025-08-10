@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background: #f8f9fa;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Theming */
+.theme-light {
+  background: #f8f9fa;
+  color: #1f2937;
+}
+.theme-dark {
+  background: #111827;
+  color: #f3f4f6;
+}
+.theme-sky {
+  background: linear-gradient(to right, #e0f7fa, #fff);
+}
+.theme-lavender {
+  background: linear-gradient(to right, #ede9fe, #ffffff);
+}
+
+/* Heading */
+.app-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+/* Motivation */
+.motivation {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6b7280;
+}
+
+/* Forms */
+input[type="text"], input[type="email"] {
+  padding: 0.75rem 1rem;
+  width: 60%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-right: 1rem;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+button {
+  padding: 0.65rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  background: #6366f1;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #4f46e5;
+  transform: scale(1.03);
+}
+
+/* Task list */
+.tasks-list {
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+
+.task-item span,
+.task-item p,
+.task-item div {
+  color: inherit !important;
+  opacity: 1 !important;
+  font-style: normal !important;
+  text-decoration: none !important;
+}
+
+/* Completed task styles with theme support */
+.theme-dark .task-item.completed {
+  text-decoration: line-through;
+  color: #d1d5db;
+  background: #1f2937;
+  font-style: italic;
+  opacity: 1;
+}
+
+.theme-light .task-item.completed {
+  text-decoration: line-through;
+  color: #4b5563;
+  background: #f3f4f6;
+  font-style: italic;
+  opacity: 1;
+}
+
+.task-status {
+  margin-right: 12px;
+  transform: scale(1.2);
+}
+
+.delete-task {
+  background-color: #ef4444;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+}
+
+.delete-task:hover {
+  background-color: #dc2626;
+}
+
+/* Centered form */
+.centered-form {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* Filters */
+#task-filters {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+#task-filters button {
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+/* Streak */
+.streak-container {
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1.5rem;
+  background: #fef3c7;
+  border: 2px dashed #f59e0b;
+  border-radius: 16px;
+  max-width: 300px;
+}
+
+.streak-container .fire {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Productivity Graph */
+.productivity-graph {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.bar-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.bar {
+  width: 20px;
+  background: #4f46e5;
+  border-radius: 6px 6px 0 0;
+}
+
+.bar-label {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Progress Ring */
+.progress-ring {
+  margin: 3rem auto;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.progress-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke: #10b981;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.ring-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Greeting & Clock */
+.greeting-block {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#greeting-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#clock-time {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Side Cards */
+.side-card {
+  position: absolute;
+  top: 5rem;
+  background: #e0f2fe;
+  color: #0f172a;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 160px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.theme-dark .side-card {
+  background: #1f2937;
+  color: #f3f4f6;
+}
+
+.left-card {
+  left: 1rem;
+}
+
+.right-card {
+  right: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.footer-wave {
+  margin: 2rem auto;
+  height: 8px;
+  width: 60%;
+  background: linear-gradient(to right, #a5b4fc, #60a5fa, #a5b4fc);
+  border-radius: 50px;
+}
+
+/* Theme Selector */
+.theme-selector {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+/* Empty task message */
+.no-tasks {
+  text-align: center;
+  font-style: italic;
+  color: #9ca3af;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .side-card {
+    position: static;
+    width: auto;
+    margin: 0.5rem auto;
+  }
+
+  .progress-ring {
+    margin: 2rem auto;
+  }
+}

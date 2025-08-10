@@ -1,0 +1,6 @@
+{
+    "email": "test@email.com",
+    "code": "828672",
+    "pending": "not_found",
+    "timestamp": 1751866206
+}

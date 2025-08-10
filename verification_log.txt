@@ -1,0 +1,7 @@
+2025-06-29 16:26:06 - Email: test@email.com, Code: 828672, Success: Yes
+2025-06-29 16:33:47 - Email: test@email.com, Code: 828672, Success: No
+2025-06-29 17:15:12 - Email: test@email.com, Code: 828672, Success: No
+2025-06-29 17:17:02 - Email: test@email.com, Code: 828672, Success: No
+2025-06-29 17:20:45 - Email: diganto2@email.com, Code: 445362, Success: Yes
+2025-06-29 17:23:18 - Email: diganto2@email.com, Code: 445362, Success: No
+2025-07-07 05:30:07 - Email: test@email.com, Code: 828672, Success: No
